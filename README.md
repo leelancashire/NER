@@ -24,6 +24,8 @@ pytest
 
 ## Run the Application
 
+Example: 
+
 ```sh
 python run.py
 curl -X POST "http://0.0.0.0:5001/api/v1/extract" -F "file=@docs/Post-exertional malaise.pdf"
@@ -34,10 +36,10 @@ This will write a json file to `/tmp/extracted_entities.json`
 
 
 
-# Models tested and working (although not performing well)
+## Models tested and working (although not performing amazingly well)
 
 
-d4data/biomedical-ner-all
-https://huggingface.co/d4data/biomedical-ner-all
-
-GPL/trec-covid-msmarco-distilbert-gpl"
+`d4data/biomedical-ner-all`
+`https://huggingface.co/d4data/biomedical-ner-all`
+`GPL/trec-covid-msmarco-distilbert-gpl"`
+`ProdicusII/ZeroShotBioNER`
