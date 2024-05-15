@@ -1,0 +1,9 @@
+transformers
+torch
+flask
+fastapi
+uvicorn
+pydantic
+PyMuPDF
+pytest
+nltk
