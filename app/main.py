@@ -18,6 +18,8 @@ def extract_entities():
     Returns:
         Response: JSON response containing the extracted entities and their context.
     """
+    
+    # Check if the file is in the request
     if 'file' not in request.files:
         return "No file provided", 400
 
@@ -29,7 +31,7 @@ def extract_entities():
     if not file.filename.endswith('.pdf'):
         return "Unsupported file type", 415
 
-    # Save the PDF file
+    # Save the PDF file to the temp directory
     file_path = save_file(file, current_app.config['UPLOAD_FOLDER'])
 
     # Extract text from PDF
