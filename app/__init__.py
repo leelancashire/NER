@@ -8,9 +8,11 @@ def create_app():
     Returns:
         app (Flask): Flask application instance.
     """
-    app = Flask(__name__)
+    # see: https://python-adv-web-apps.readthedocs.io/en/latest/flask.html#test-flask
+    app = Flask(__name__) 
     app.config.from_object(Config)
 
+    # see: https://realpython.com/flask-blueprint/
     from .main import bp as main_bp
     app.register_blueprint(main_bp)
 

@@ -23,7 +23,7 @@ def save_file(file, upload_folder):
     Save an uploaded file to the specified folder.
 
     Args:
-        file (FileStorage): Uploaded file.
+        file: Uploaded file.
         upload_folder (str): Directory to save the file.
 
     Returns:
