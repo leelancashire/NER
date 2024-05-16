@@ -56,6 +56,6 @@ def extract_entities():
     except Exception as e:
         print(f"Failed to write extracted entities to file: {e}")
 
-    return jsonify(context_info), 200
+    return jsonify(context_info), 200 # https://www.geeksforgeeks.org/use-jsonify-instead-of-json-dumps-in-flask/
 
 

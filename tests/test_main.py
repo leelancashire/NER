@@ -30,4 +30,6 @@ def test_extract_entities(client):
         assert 'entity' in entity
         assert 'context' in entity
         assert 'start' in entity
+        assert 'model_label' in entity
+        assert 'confidence' in entity
         assert 'end' in entity

@@ -18,7 +18,6 @@ Experimenting with extracting medically relevant entities from PDF documents usi
 ## Test the Application
 
 ```sh
-export PYTHONPATH=$(pwd)
 pytest
 ```
 

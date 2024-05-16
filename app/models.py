@@ -130,8 +130,8 @@ class EntityExtractor:
             list: List of entities extracted from the text.
         """
         entities = []
-        # Split text into sentences
-        sentences = nltk.sent_tokenize(text)
+        # Split text into sentences; this helps preserve context for better entity recognition and handling of long text. 
+        sentences = nltk.sent_tokenize(text) # https://www.nltk.org/_modules/nltk/tokenize.html#sent_tokenize
         for sentence in sentences:
             # Extract entities from each sentence
             entities.extend(self.get_entities(sentence))
@@ -148,20 +148,20 @@ class EntityExtractor:
             str: Abstract section of the text.
         """
         # Use regular expressions to find the abstract section
-        match = re.search(r'(?i)abstract[\s\:\u2002-\u200b]*', text)
+        match = re.search(r'(?i)abstract[\s\:\u2002-\u200b]*', text) # also match white space etc...
         if match:
             start_index = match.end()
-            end_index = start_index + 5000  # Adjust length as needed
+            end_index = start_index + 5000  # Arbitrary length, adjust length as needed or modify to search full text
             abstract = text[start_index:end_index].strip()
-            # Print the first 500 characters of the extracted abstract for debugging
-            print(f"Extracted abstract: {abstract[:500]}...")
+            # Debugging: Print the first 500 characters of the extracted abstract for debugging
+            # print(f"Extracted abstract: {abstract[:500]}...")
             return abstract
         else:
             # Fall back to extracting the first N sentences if no abstract section is found
             sentences = nltk.sent_tokenize(text)
             abstract = " ".join(sentences[:20])  # N = 20. Adjust the number of sentences as needed
-            # Print the fallback abstract for debugging
-            print(f"Extracted abstract (fallback): {abstract}")
+            # Debugging: Print the fallback abstract for debugging
+            # print(f"Extracted abstract (fallback): {abstract}")
             return abstract
 
     def extract_context(self, text, entities, context_window=50):
