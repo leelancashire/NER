@@ -39,6 +39,9 @@ This will write a json file to `/tmp/extracted_entities.json`
 
 
 `d4data/biomedical-ner-all`
+
 `https://huggingface.co/d4data/biomedical-ner-all`
+
 `GPL/trec-covid-msmarco-distilbert-gpl"`
+
 `ProdicusII/ZeroShotBioNER`
